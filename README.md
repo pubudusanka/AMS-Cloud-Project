@@ -1,7 +1,7 @@
-# LMS Cloud Project
+# AMS Cloud Project
 
 ## Overview
-The LMS Cloud Project is a cloud-based Learning Management System (LMS) designed to manage user authentication, attendance, QR code generation, and more. The system is deployed on AWS and uses modern technologies like React, Node.js, Spring Boot, and MySQL.
+The AMS Cloud Project is a cloud-based Attendance Marking System (AMS) designed to manage user authentication, attendance, QR code generation, and more. The system is deployed on AWS and uses modern technologies like React, Node.js, Spring Boot, and MySQL.
 
 ---
 
