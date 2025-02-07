@@ -1,0 +1,40 @@
+.card-image{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+}
+.card-title{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.box-root{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50vw;
+}
+.name{
+    width: 44vw;
+    height: 30px;
+}
+.regNumber{
+    width: 44vw;
+    height: 30px;
+}
+.telNumber{
+    width: 44vw;
+    height: 30px;
+}
+.email{
+    width: 44vw;
+    height: 30px;
+}
+.password{
+    width: 44vw;
+    height: 30px;
+}
