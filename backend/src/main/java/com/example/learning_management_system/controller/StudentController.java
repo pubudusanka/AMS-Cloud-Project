@@ -1,9 +1,9 @@
 package com.example.learning_management_system.controller;
 
-import com.project.Attendance.Marking.System.DTO.StudentDto;
-import com.project.Attendance.Marking.System.DTO.StudentResponseDto;
-import com.project.Attendance.Marking.System.Entity.Student;
-import com.project.Attendance.Marking.System.Service.StudentService;
+import com.example.learning_management_system.dto.StudentDto;
+import com.example.learning_management_system.dto.StudentResponseDto;
+import com.example.learning_management_system.entity.Student;
+import com.example.learning_management_system.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
