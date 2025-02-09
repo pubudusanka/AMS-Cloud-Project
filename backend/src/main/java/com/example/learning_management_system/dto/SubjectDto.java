@@ -1,6 +1,6 @@
 package com.example.learning_management_system.dto;
 
-import com.project.Attendance.Marking.System.Entity.Lecture;
+import com.example.learning_management_system.entity.Lecture;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
