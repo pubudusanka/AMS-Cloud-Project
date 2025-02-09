@@ -1,0 +1,38 @@
+.card1{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+.card-image1{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 680px;
+
+}
+  
+.card-title1{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: blueviolet;
+    margin-top: 50px;
+    font-size: 3em;
+    margin-left: 630px;
+}
+
+.qr-code1{
+    width: 300px;
+    height: 300px;
+    margin-top: 0px;
+    margin-left: 620px;
+
+}
