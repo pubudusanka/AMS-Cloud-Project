@@ -32,8 +32,8 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          APPLICATION_NAME: "lms-backend"
+          AWS_REGION: "ap-south-1"
+          APPLICATION_NAME: "AMS_Application"
           ENVIRONMENT_NAME: "lms-backend-env"
         run: |
           pip install awsebcli --upgrade --user
