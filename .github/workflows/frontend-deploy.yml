@@ -7,6 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -16,13 +17,20 @@ jobs:
         with:
           node-version: 18  # Ensure compatibility
 
-      - name: Install Dependencies & Build React App
+      - name: Change to Frontend Directory & Install Dependencies
         run: |
+          cd frontend
           npm install
+
+      - name: Build React App
+        run: |
+          cd frontend
           npm run build
 
       - name: Verify Build Output
-        run: ls -la dist/
+        run: |
+          cd frontend
+          ls -la dist/
 
       - name: Install AWS CLI
         run: |
@@ -37,7 +45,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://awscloudbucketbuild --delete
+        run: |
+          cd frontend
+          aws s3 sync dist/ s3://awscloudbucketbuild --delete
 
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
