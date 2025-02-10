@@ -32,11 +32,10 @@ jobs:
           cd frontend
           ls -la dist/
 
-      - name: Install AWS CLI (Manually)
+      - name: Update AWS CLI
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+          sudo /usr/local/aws-cli/v2/current/bin/aws --version
+          sudo /usr/local/aws-cli/v2/current/bin/aws install --update
           aws --version
 
       - name: Configure AWS Credentials
