@@ -32,12 +32,12 @@ jobs:
           cd frontend
           ls -la dist/
 
-      - name: Reinstall AWS CLI
+      - name: Install AWS CLI
         run: |
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            sudo ./aws/install --update
-            aws --version
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install --update
+          aws --version
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -46,26 +46,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Check AWS CLI Version
-        run: aws --version
-        
-      - name: List AWS CloudFront Commands (Debugging)
-        run: aws cloudfront help
-
-      - name: Debug AWS CLI Commands
-        run: |
-            aws --version
-            aws cloudfront help
-
-        
-
       - name: Deploy to S3
         run: |
           cd frontend
           aws s3 sync dist/ s3://awscloudbucketbuild --delete
 
-          - name: Invalidate CloudFront Cache
-          run: |
-            export PATH=$HOME/.local/bin:$PATH
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-        
+      - name: Invalidate CloudFront Cache
+        run: |
+          export PATH=$HOME/.local/bin:$PATH
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
